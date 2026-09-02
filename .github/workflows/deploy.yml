@@ -1,0 +1,46 @@
+name: Bygg och publicera
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Två deployer på en gång blir bara rörigt. Den senaste vinner.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bygg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Kontrollera att bygget blev något
+        run: |
+          test -f dist/index.html
+          test -f dist/img/og.jpg
+          test -n "$(ls -A dist/img)"
+
+      - name: Publicera till Cloudflare Pages
+        # Pull requests byggs bara, de publiceras inte.
+        if: github.event_name != 'pull_request'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=sandra-alexander --branch=main

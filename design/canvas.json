@@ -1,0 +1,52 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "A · Klassiskt — desktop", "x": 0, "y": 0, "w": 1280, "h": 2500 },
+    { "file": "KlassisktMobil.dc.html", "title": "A · Klassiskt — mobil", "x": 1400, "y": 0, "w": 390, "h": 2300 },
+
+    { "file": "BotaniskDesktop.dc.html", "title": "B · Botanisk — desktop", "x": 0, "y": 2620, "w": 1280, "h": 2400 },
+    { "file": "BotaniskMobil.dc.html", "title": "B · Botanisk — mobil", "x": 1400, "y": 2620, "w": 390, "h": 2150 },
+
+    { "file": "EditorialDesktop.dc.html", "title": "C · Editorial — desktop", "x": 0, "y": 5140, "w": 1280, "h": 2150 },
+    { "file": "EditorialMobil.dc.html", "title": "C · Editorial — mobil", "x": 1400, "y": 5140, "w": 390, "h": 2250 },
+
+    { "file": "OsaFormular.dc.html", "title": "O.S.A. — mobil (i stil A)", "x": 0, "y": 7510, "w": 390, "h": 1850 }
+  ],
+  "annotations": [
+    {
+      "id": "note-a",
+      "x": 1900,
+      "y": 0,
+      "w": 320,
+      "text": "A · KLASSISKT\n\nNärmast er egen PDF: fotoraden överst, centrerad rubrik och menyn under. Gräddvitt, spärrade serifversaler, skrivstil som accent.\n\nFör: ser ut som ni redan tänkt er, åldras väl, funkar med de foton ni har.\nEmot: också den mest sedda looken – ingen minns den för att den var just er."
+    },
+    {
+      "id": "note-b",
+      "x": 1900,
+      "y": 2620,
+      "w": 320,
+      "text": "B · BOTANISK\n\nDjupgrönt fält, valvformat foto som bryter kanten, ritade kvistar och en varmare beige.\n\nFör: mer personlighet än A, och grönskan knyter ihop sajt, inbjudan och dukning.\nEmot: låser er till en grön-beige palett – blir fel om ni landar i en annan färgvärld."
+    },
+    {
+      "id": "note-c",
+      "x": 1900,
+      "y": 5140,
+      "w": 320,
+      "text": "C · EDITORIAL\n\nMörk bakgrund, era namn i stort didone-snitt, asymmetriskt rutnät och numrerade rader.\n\nFör: särskiljer sig, ser dyrast ut, riktigt snygg i mobilen.\nEmot: kräver ett bra foto för att bära – och den mörka tonen tilltalar inte alla släktingar."
+    },
+    {
+      "id": "note-osa",
+      "x": 1900,
+      "y": 7510,
+      "w": 320,
+      "text": "OSA\n\nRitat i stil A, men samma formulär funkar i vilken riktning som helst – bara färg och typsnitt byts.\n\nAlla fält är förslag: stryk eller lägg till som ni vill. Nedre rutan visar vad gästen ser efter skickat svar.\n\nSista svarsdag saknas fortfarande – säg till vilket datum som ska stå."
+    },
+    {
+      "id": "note-foton",
+      "x": 1900,
+      "y": 8300,
+      "w": 320,
+      "text": "FOTON\n\nRutorna är fortfarande platshållare – jag kan inte bearbeta bilder här utan att först installera ett verktyg för det.\n\nDe fyra bilderna i zip-filen är stående (tre ligger sidledes i filen men vänds rätt av webbläsaren). Fotoraden i A behöver fem bilder – vi har fyra på er två plus familjebilden.\n\nSäg vilken som ska vara den stora, så bakar jag in dem på riktigt."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

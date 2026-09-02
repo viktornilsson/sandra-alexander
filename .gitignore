@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+
+# Designskisserna: arbetsfilerna sparas, den ihopsatta 2 MB-sidan gör det inte.
+design/brollopssajt-skisser.html

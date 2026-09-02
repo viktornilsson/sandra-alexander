@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandra &amp; Alexander · 11 september 2027</title>
+<meta name="description" content="Välkomna på bröllopsfest! Sandra och Alexander gifter sig den 11 september 2027 på Kronogårdens loge i Dalsjöfors.">
+
+<!-- Sidan ska inte gå att hitta via Google - bara via länken vi skickar ut. -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Förhandsvisning när länken delas i Messenger/SMS -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="Sandra &amp; Alexander · 11 september 2027">
+<meta property="og:description" content="Välkomna på bröllopsfest på Kronogårdens loge i Dalsjöfors. Save the date!">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&family=Parisienne&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#valkommen">Hoppa till innehållet</a>
+
+<header class="hero">
+  <div class="collage" aria-hidden="true">
+    <!-- fylls av bygg-skriptet -->
+  </div>
+
+  <div class="hero__text">
+    <p class="script">Välkomna på bröllopsfest</p>
+    <h1>Sandra <span class="amp">&amp;</span> Alexander</h1>
+    <p class="hero__date">11 september 2027</p>
+    <p class="hero__place">Kronogårdens loge · Dalsjöfors</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sidans innehåll">
+  <ul>
+    <li><a href="#valkommen">Välkommen</a></li>
+    <li><a href="#info">Info om dagen</a></li>
+    <li><a href="#kronogarden">Om Kronogården</a></li>
+    <li><a href="#osa" class="is-accent">OSA</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section class="countdown" aria-label="Nedräkning till bröllopsdagen">
+  <div class="countdown__item"><span class="countdown__num" id="cd-dagar">–</span><span class="countdown__lbl">dagar</span></div>
+  <div class="countdown__sep" aria-hidden="true"></div>
+  <div class="countdown__item"><span class="countdown__num" id="cd-timmar">–</span><span class="countdown__lbl">timmar</span></div>
+  <div class="countdown__sep" aria-hidden="true"></div>
+  <div class="countdown__item"><span class="countdown__num" id="cd-minuter">–</span><span class="countdown__lbl">minuter</span></div>
+</section>
+
+<main>
+
+  <section id="valkommen" class="section">
+    <h2>Välkommen</h2>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="prose">
+      <p>Du som har fått den här länken är en av personerna vi allra helst vill fira med.</p>
+      <p>Lördagen den 11 september 2027 vill vi ha dig med oss på Kronogårdens loge i Dalsjöfors. Här på sidan samlar vi all information efter hand – titta gärna in igen närmare bröllopet.</p>
+    </div>
+    <p class="signature">Sandra &amp; Alexander</p>
+
+    <figure class="portrait">
+      <!-- fylls av bygg-skriptet -->
+    </figure>
+  </section>
+
+  <section class="cards">
+    <article id="info" class="card">
+      <h2>Info om dagen</h2>
+      <p>Tider, program, klädkod och mat.</p>
+      <p class="soon"><span class="dot" aria-hidden="true"></span>Mer info kommer</p>
+    </article>
+
+    <article id="kronogarden" class="card">
+      <h2>Om Kronogården</h2>
+      <p>Platsen, vägbeskrivning och boende.</p>
+      <p class="soon"><span class="dot" aria-hidden="true"></span>Mer info kommer</p>
+    </article>
+  </section>
+
+  <section id="osa" class="osa">
+    <p class="eyebrow">Save the date</p>
+    <h2>Kommer du?</h2>
+    <p class="osa__lead">Svara här på sidan så vet vi hur vi ska planera. Du kan ändra ditt svar senare – skicka bara in formuläret en gång till.</p>
+    <p class="osa__deadline" data-deadline hidden>Svara senast <strong></strong></p>
+
+    <form id="osa-form" class="form" novalidate>
+      <div class="field">
+        <label for="namn">Namn <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="namn" name="namn" autocomplete="name" required placeholder="För- och efternamn">
+        <p class="error" data-error-for="namn"></p>
+      </div>
+
+      <div class="field">
+        <label for="epost">E-post <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" id="epost" name="epost" autocomplete="email" required placeholder="namn@exempel.se">
+        <p class="hint">Hit skickar vi bekräftelsen och uppdateringar om bröllopet.</p>
+        <p class="error" data-error-for="epost"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobil">Mobil</label>
+        <input type="tel" id="mobil" name="mobil" autocomplete="tel" placeholder="070-123 45 67">
+      </div>
+
+      <fieldset class="field">
+        <legend>Kommer du? <span class="req" aria-hidden="true">*</span></legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="kommer" value="Ja" required>
+            <span>Ja, jag kommer</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="kommer" value="Nej">
+            <span>Tyvärr inte</span>
+          </label>
+        </div>
+        <p class="error" data-error-for="kommer"></p>
+      </fieldset>
+
+      <div class="only-if-coming" hidden>
+        <div class="field">
+          <label for="antal">Antal personer</label>
+          <input type="number" id="antal" name="antal" min="1" max="10" step="1" value="1" inputmode="numeric">
+          <p class="hint">Räkna med dig själv och eventuella medföljande.</p>
+        </div>
+
+        <div class="field">
+          <label for="medfoljande">Namn på medföljande</label>
+          <input type="text" id="medfoljande" name="medfoljande" placeholder="Namn på den eller de du tar med">
+        </div>
+
+        <div class="field">
+          <label for="kost">Allergi eller specialkost</label>
+          <textarea id="kost" name="kost" rows="3" placeholder="T.ex. gluten, laktos, vegetarian …"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="meddelande">Meddelande till oss</label>
+        <textarea id="meddelande" name="meddelande" rows="3" placeholder="Något vi behöver veta? Vill du hålla tal?"></textarea>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" name="uppdateringar" value="Ja" checked>
+        <span>Jag vill få uppdateringar om bröllopet på mejlen</span>
+      </label>
+
+      <!-- Spamfälla: fylls bara i av robotar, ska aldrig synas för en människa. -->
+      <div class="gotcha" aria-hidden="true">
+        <label for="webbplats">Lämna detta fält tomt</label>
+        <input type="text" id="webbplats" name="webbplats" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn" id="osa-submit">Skicka svar</button>
+      <p class="form__status" id="osa-status" role="status" aria-live="polite"></p>
+      <p class="fineprint">Vi sparar dina uppgifter enbart för att planera bröllopet och tar bort dem efteråt.</p>
+    </form>
+
+    <div class="thanks" id="osa-thanks" hidden>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.5"/><path d="M8 12.4l2.7 2.7L16.2 9.4"/>
+      </svg>
+      <h3>Tack för ditt svar!</h3>
+      <p>Vi har skickat en bekräftelse till din mejl. Behöver du ändra något – svara bara igen här på sidan.</p>
+      <button type="button" class="linkbtn" id="osa-again">Skicka ett svar till</button>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section section--tight">
+    <h2>Kontakt</h2>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="prose">Undrar du något? Hör av dig till oss.</p>
+    <p class="contact" data-kontakt></p>
+    <p class="soon" data-kontakt-soon><span class="dot" aria-hidden="true"></span>Mer info kommer</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="script">Vi ses!</p>
+  <p class="footer__meta">Sandra &amp; Alexander · 11 september 2027 · Kronogårdens loge, Dalsjöfors</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

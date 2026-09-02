@@ -1,0 +1,14 @@
+{
+  "name": "sandra-alexander",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bröllopssajt för Sandra & Alexander, 11 september 2027",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}
