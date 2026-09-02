@@ -10,7 +10,7 @@ const CONFIG = {
 
   // Apps Script-webbadressen som tar emot OSA-svaren (slutar på /exec).
   // Tom sträng = formuläret stängs av med ett vänligt meddelande.
-  osaEndpoint: 'https://script.google.com/macros/s/AKfycbxNck-49TSK2rhnfMY7H8c8JTXSQFfY3shO3Ja3MOSn1knVx_ApK-2YnAKLTPAtqI2O/exec',
+  osaEndpoint: 'https://script.google.com/macros/s/AKfycbwrajqv-3t2t3lR_b5B4N0VUqdrHvkNuWrMIkB4iX6V5OaRVZZc_nwuOoN59Occ3PAI/exec',
 
   // Visas under Kontakt. Tomma värden döljer raden och låter "Mer info kommer" stå kvar.
   kontaktMejl: '',
