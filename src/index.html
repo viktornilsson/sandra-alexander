@@ -9,12 +9,16 @@
 <!-- Sidan ska inte gå att hitta via Google - bara via länken vi skickar ut. -->
 <meta name="robots" content="noindex, nofollow">
 
-<!-- Förhandsvisning när länken delas i Messenger/SMS -->
+<!-- Förhandsvisning när länken delas i Messenger/SMS.
+     og:image och og:url måste vara fullständiga adresser - Facebooks crawler
+     följer inte relativa sökvägar, och då kommer förhandsvisningen utan bild.
+     Byter ni domän är det de här två raderna som ska uppdateras. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sv_SE">
 <meta property="og:title" content="Sandra &amp; Alexander · 11 september 2027">
 <meta property="og:description" content="Välkomna på bröllopsfest på Kronogårdens loge i Dalsjöfors. Save the date!">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:url" content="https://sandra-och-alexander.pages.dev/">
+<meta property="og:image" content="https://sandra-och-alexander.pages.dev/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

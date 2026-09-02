@@ -22,7 +22,7 @@ var AVSANDARE = 'Sandra & Alexander';
 // Används i bekräftelsemejlet.
 var BROLLOPSDATUM = 'lördagen den 11 september 2027';
 var PLATS = 'Kronogårdens loge i Dalsjöfors';
-var SAJT = '';
+var SAJT = 'https://sandra-och-alexander.pages.dev';
 
 var KOLUMNER = [
   'Tidpunkt', 'Namn', 'E-post', 'Mobil', 'Kommer', 'Antal',

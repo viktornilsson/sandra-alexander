@@ -2,7 +2,8 @@
 
 Statisk sida för bröllopsfesten den 11 september 2027 på Kronogårdens loge i Dalsjöfors.
 Ren HTML, CSS och JavaScript. Bilderna optimeras av ett litet byggskript. Ligger på
-Cloudflare Pages och publiceras av GitHub Actions vid varje push till `main`.
+Cloudflare Pages, som bygger och publicerar om vid varje push till `main`.
+Sidan: <https://sandra-och-alexander.pages.dev>
 
 Ska du sätta upp det första gången – börja i [ATT-GORA.md](ATT-GORA.md).
 

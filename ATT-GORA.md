@@ -24,66 +24,35 @@ npm run dev
 
 ---
 
-## 1. GitHub
+## 1. GitHub ✔ klart
 
-- [ ] Skapa ett **privat** repo på <https://github.com/new>, döp det till `sandra-alexander`.
-      Skapa det tomt – ingen README, ingen .gitignore.
-- [ ] Koppla ihop och pusha:
-
-```bash
-git init -b main
-git add .
-git commit -m "Bröllopssajt för Sandra och Alexander"
-git remote add origin https://github.com/<ditt-användarnamn>/sandra-alexander.git
-git push -u origin main
-```
-
-Bygget kommer att köra och misslyckas i sista steget tills Cloudflare-nycklarna finns.
-Det är väntat – fortsätt till nästa steg.
+Repot ligger på <https://github.com/viktornilsson/sandra-alexander>, kopplat som
+`origin` på grenen `main`.
 
 ---
 
-## 2. Cloudflare Pages
+## 2. Cloudflare Pages ✔ klart
 
-### 2.1 Konto
+Sidan ligger på **<https://sandra-och-alexander.pages.dev>** och publiceras om vid
+varje push till `main`.
 
-- [ ] Skapa konto på <https://dash.cloudflare.com/sign-up> och verifiera mejladressen.
-      Ingen betalning behövs, Pages gratisnivå räcker med marginal.
+Så är den uppsatt, om något behöver göras om:
 
-### 2.2 Skapa projektet
+- Projektet är skapat under **Workers & Pages → Create → Pages → Connect to Git**
+  och kopplat till `viktornilsson/sandra-alexander`.
+- Framework preset `None`, build command `npm run build`, build output directory
+  `dist`, production branch `main`.
+- Environment variable **`NODE_VERSION` = `22`**. Utan den bygger Cloudflare med en
+  äldre Node, och `sharp` vägrar ladda sin binär.
 
-Kör lokalt, en gång. Ett webbläsarfönster öppnas där du loggar in på Cloudflare:
+Cloudflare bygger själv, så det behövs varken API-token eller GitHub-secrets. GitHub
+Actions kör bara en byggkontroll parallellt, så att ett trasigt bygge syns i pull
+requesten i stället för först hos Cloudflare.
 
-```bash
-npx wrangler pages project create sandra-alexander --production-branch main
-```
-
-Sidan får då adressen `https://sandra-alexander.pages.dev`.
-
-### 2.3 API-token
-
-- [ ] Gå till <https://dash.cloudflare.com/profile/api-tokens> → **Create Token**
-- [ ] Välj **Create Custom Token**
-- [ ] Namn: `sandra-alexander deploy`
-- [ ] Permissions: **Account** → **Cloudflare Pages** → **Edit**
-- [ ] Account Resources: ditt konto
-- [ ] Skapa och **kopiera värdet direkt** – det visas bara en gång
-
-### 2.4 Konto-ID
-
-- [ ] Öppna <https://dash.cloudflare.com>, gå in på **Workers & Pages**.
-      Konto-ID:t står i högerspalten, och är också den långa strängen i adressfältet
-      efter `dash.cloudflare.com/`.
-
-### 2.5 Lägg in nycklarna i GitHub
-
-- [ ] Repot → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
-- [ ] `CLOUDFLARE_API_TOKEN` = token från 2.3
-- [ ] `CLOUDFLARE_ACCOUNT_ID` = id:t från 2.4
-- [ ] Kör om bygget: fliken **Actions** → senaste körningen → **Re-run all jobs**
-
-Nu ska sidan ligga på `https://sandra-alexander.pages.dev`. Härifrån publiceras varje
-push till `main` automatiskt.
+> Projektnamnet blir adressen och **går inte att ändra i efterhand** – vill ni byta
+> får ni skapa ett nytt projekt mot samma repo och radera det gamla. Byter ni adress:
+> uppdatera `og:url` och `og:image` i `src/index.html` samt `SAJT` i
+> `apps-script/Code.gs`.
 
 ---
 
@@ -95,9 +64,9 @@ push till `main` automatiskt.
       Använd gärna Sandras konto, så äger de svaren själva.
 - [ ] I arket: **Tillägg** → **Apps Script**
 - [ ] Radera exempelkoden, klistra in allt från `apps-script/Code.gs`
-- [ ] Fyll i högst upp i filen:
-  - `NOTIS_TILL` – mejladress(er) som ska få notis vid varje svar
-  - `SAJT` – sidans adress, t.ex. `https://sandra-alexander.pages.dev`
+- [ ] Fyll i **`NOTIS_TILL`** högst upp i filen – mejladress(er) som ska få en notis
+      vid varje svar. Flera separeras med komma.
+      (`SAJT` är redan ifylld med sidans adress.)
 - [ ] Spara
 
 ### 3.2 Publicera som webbapp
@@ -128,13 +97,14 @@ push till `main` automatiskt.
 
 ## 4. Domän (kan hoppas över)
 
-`sandra-alexander.pages.dev` fungerar. En egen domän ser bara bättre ut i ett SMS.
+`sandra-och-alexander.pages.dev` fungerar. En egen domän ser bara bättre ut i ett SMS.
 
 - [ ] Köp domänen, t.ex. `sandraochalexander.se` – ca 100–150 kr/år hos Loopia,
       Inleed eller Cloudflare Registrar
 - [ ] Peka domänens namnservrar till Cloudflare (**Add a domain** i dashboarden)
 - [ ] Pages-projektet → **Custom domains** → **Set up a custom domain**
-- [ ] Uppdatera `SAJT` i `Code.gs` och `og:image`-raderna behöver inget – de är relativa
+- [ ] Uppdatera `SAJT` i `Code.gs` samt `og:url` och `og:image` i `src/index.html` –
+      de pekar på den fullständiga adressen och måste följa med vid ett domänbyte
 
 ---
 

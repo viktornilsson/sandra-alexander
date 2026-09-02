@@ -1,4 +1,8 @@
-name: Bygg och publicera
+name: Byggkontroll
+
+# Cloudflare Pages bygger och publicerar sidan själv vid varje push till main.
+# Det här jobbet publicerar ingenting - det säger bara till om bygget går sönder,
+# så att felet syns i pull requesten i stället för först i Cloudflare.
 
 on:
   push:
@@ -10,9 +14,8 @@ on:
 permissions:
   contents: read
 
-# Två deployer på en gång blir bara rörigt. Den senaste vinner.
 concurrency:
-  group: pages-${{ github.ref }}
+  group: bygg-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -35,12 +38,3 @@ jobs:
           test -f dist/index.html
           test -f dist/img/og.jpg
           test -n "$(ls -A dist/img)"
-
-      - name: Publicera till Cloudflare Pages
-        # Pull requests byggs bara, de publiceras inte.
-        if: github.event_name != 'pull_request'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=sandra-alexander --branch=main
